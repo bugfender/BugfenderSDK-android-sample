@@ -1,0 +1,56 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+classes/
+gen-external-apklibs/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+project.properties
+release.properties
+
+# Eclipse project files
+.classpath
+.project
+.metadata
+.settings
+
+# Intellij
+.idea/
+*.iml
+
+# Maven
+log/
+target/
+pom.xml.*
+
+# Mac
+*/test-output
+temp-testng-customsuite.xml
+
+# Crashlytics
+crashlytics-build.properties
+com_crashlytics_export_strings.xml
+app/keystore/keystore.config
+logs
+screenshot
