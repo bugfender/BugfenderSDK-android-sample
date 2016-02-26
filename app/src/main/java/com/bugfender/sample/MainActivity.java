@@ -22,5 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
     //Bugfender send issue
     Bugfender.sendIssue("Title", "Message");
+
+    // Activate the force enable
+    Bugfender.setForceEnabled(true);
+
+    // Sync all the logs and issues and send it.
+    Bugfender.forceSendOnce();
   }
 }
