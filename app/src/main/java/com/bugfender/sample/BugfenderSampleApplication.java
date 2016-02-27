@@ -9,6 +9,6 @@ public class BugfenderSampleApplication extends Application {
     super.onCreate();
 
     // Initialize the bugfender sdk.
-    Bugfender.init(this, "2nQQTrzZWYImB4tRHVuFIiVBocvaUnBy");
+    Bugfender.init(this, "APPLICATION_TOKEN", BuildConfig.DEBUG);
   }
 }
