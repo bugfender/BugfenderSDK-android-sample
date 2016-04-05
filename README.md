@@ -14,7 +14,13 @@
 * Bugfender automatically generates an identifier for the application install in a device. You can retrieve it to show in your UI or send to your server: `Bugfender.getDeviceIdentifier();`
 
 ## SDK status
-Please bear in mind that the SDK is still in beta development and thus **it is not suitable for production**. There are a number of known issues with the SDK and web interface that still need to be addressed during the next weeks.
+The SDK is still under development but the existent functionality has been thoroughly tested and **it is suitable for production**. There are no known issues with the SDK at the moment.
+
+The following functionalities are missing (compared to the iOS SDK):
+
+* [Device associated data] (https://bugfender.com/blog/associated-device-information)
+* Automated UI Event logging
+* Automated logcat logging
 
 ### Contributions
 We are releasing this early version because we want to get all possible feedback. Please feel free to open an issue or contact us at https://bugfender.com/contact .
