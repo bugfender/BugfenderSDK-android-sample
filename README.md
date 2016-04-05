@@ -6,11 +6,12 @@
 * Add Bugfender maven repository to your `build.gradle` in the root project: `maven {
             url 'https://oss.sonatype.org/content/repositories/snapshots'
         }`
-* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.1.8-SNAPSHOT'`
+* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.2-SNAPSHOT'`
 * Add the required permissions to your `AndroidManifest.xml` if you don't have them already `android.permission.ACCESS_NETWORK_STATE` and `android.permission.INTERNET`
 * Initialize Bugfender in your `Application#onCreate()` with `Bugfender.init(this, "<YOUR APP KEY>", BuildConfig.DEBUG);`
 * Log anything you want with `Bugfender.d()`, `Bugfender.w()`, `Bugfender.e()`
 * If you detect an issue you can send it with `Bugfender.sendIssue("Title", "Message");`
+* Bugfender automatically generates an identifier for the application install in a device. You can retrieve it to show in your UI or send to your server: `Bugfender.getDeviceIdentifier();`
 
 ## SDK status
 Please bear in mind that the SDK is still in beta development and thus **it is not suitable for production**. There are a number of known issues with the SDK and web interface that still need to be addressed during the next weeks.
