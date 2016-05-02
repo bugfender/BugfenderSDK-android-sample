@@ -16,7 +16,7 @@
   - `Bugfender.setDeviceInteger("user.photo.image.width", 600);`
   - `Bugfender.setDeviceBoolean("user.is.logged", true);`
   - `Bugfender.setDeviceFloat("user.children", 3f);`
-* Also you can remove a specific value associated with the device, you can remove it with: `Bugfender.removeDeviceKey("user.children", 3);`
+* Also you can remove a specific value associated with the device, you can remove it with: `Bugfender.removeDeviceKey("user.children");`
 * Bugfender automatically generates an identifier for the application install in a device. You can retrieve it to show in your UI or send to your server: `Bugfender.getDeviceIdentifier();`
 
 ## SDK status
