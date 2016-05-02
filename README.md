@@ -11,7 +11,7 @@
 * Initialize Bugfender in your `Application#onCreate()` with `Bugfender.init(this, "<YOUR APP KEY>", BuildConfig.DEBUG);`
 * Log anything you want with `Bugfender.d()`, `Bugfender.w()`, `Bugfender.e()`
 * If you detect an issue you can send it with `Bugfender.sendIssue("Title", "Message");`
-* If you want associate a value (String, Integer, Boolean or Float) you can send it with:
+* If you want to associate a value (String, Integer, Boolean or Float) to a device you can send it with (learn more about [Device associated data] (https://bugfender.com/blog/associated-device-information)):
   - `Bugfender.setDeviceString("user.email", "john@john.com");`
   - `Bugfender.setDeviceInteger("user.photo.image.width", 600);`
   - `Bugfender.setDeviceBoolean("user.is.logged", true);`
@@ -24,7 +24,6 @@ The SDK is still under development but the existent functionality has been thoro
 
 The following functionalities are missing (compared to the iOS SDK):
 
-* [Device associated data] (https://bugfender.com/blog/associated-device-information)
 * Automated UI Event logging
 * Automated logcat logging
 
