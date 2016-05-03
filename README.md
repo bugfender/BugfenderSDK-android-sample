@@ -19,6 +19,9 @@
 * Also you can remove a specific value associated with the device, you can remove it with: `Bugfender.removeDeviceKey("user.children");`
 * Bugfender automatically generates an identifier for the application install in a device. You can retrieve it to show in your UI or send to your server: `Bugfender.getDeviceIdentifier();`
 
+## More information
+For more information on all methods available please you can check the [Bugfender Android reference documentation](bugfender.github.io/BugfenderSDK-android-docs).
+
 ## SDK status
 The SDK is still under development but the existent functionality has been thoroughly tested and **it is suitable for production**. There are no known issues with the SDK at the moment.
 
