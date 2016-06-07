@@ -3,10 +3,7 @@
 ![Beta](https://bugfender.com/wp-content/uploads/2016/02/BETA.png)
 
 ## Essential points
-* Add Bugfender maven repository to your `build.gradle` in the root project: `maven {
-            url 'https://oss.sonatype.org/content/repositories/snapshots'
-        }`
-* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.3.2-SNAPSHOT'`
+* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.3.5'`
 * Add the required permissions to your `AndroidManifest.xml` if you don't have them already `android.permission.ACCESS_NETWORK_STATE` and `android.permission.INTERNET`
 * Initialize Bugfender in your `Application#onCreate()` with `Bugfender.init(this, "<YOUR APP KEY>", BuildConfig.DEBUG); Bugfender.enableLogcatLogging();`
 * If you detect an issue you can send it with `Bugfender.sendIssue("Title", "Message");`
@@ -26,7 +23,7 @@ The SDK is still under development but the existent functionality has been thoro
 
 The following functionalities are missing (compared to the iOS SDK):
 
-* Automated UI Event logging
+* Automated UI Event logging (some done, some missing)
 * Automated reporting on new SDK versions
 
 ### Contributions
