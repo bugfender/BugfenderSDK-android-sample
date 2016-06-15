@@ -8,7 +8,9 @@ public class BugfenderSampleApplication extends Application {
   @Override public void onCreate() {
     super.onCreate();
 
-    // Initialize the bugfender sdk.
-    Bugfender.init(this, "APPLICATION_TOKEN", BuildConfig.DEBUG);
+    // Initialize Bugfender
+    Bugfender.init(this, "APPLICATION_TOKEN", BuildConfig.DEBUG); //TODO: replace with your app token here
+    Bugfender.enableLogcatLogging();
+    Bugfender.enableUIEventLogging(this);
   }
 }

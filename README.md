@@ -1,11 +1,20 @@
-# Example application using Bugfender in Android
+# Bugfender Android SDK
 
-![Beta](https://bugfender.com/wp-content/uploads/2016/02/BETA.png)
+[![Javadocs](http://www.javadoc.io/badge/com.bugfender.sdk/android.svg)](http://www.javadoc.io/doc/com.bugfender.sdk/android)
 
-## Essential points
-* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.3.5'`
+## SDK Installation
+Here are the main points to getting Bugfender wokring on yours:
+
+* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.4'`
 * Add the required permissions to your `AndroidManifest.xml` if you don't have them already `android.permission.ACCESS_NETWORK_STATE` and `android.permission.INTERNET`
-* Initialize Bugfender in your `Application#onCreate()` with `Bugfender.init(this, "<YOUR APP KEY>", BuildConfig.DEBUG); Bugfender.enableLogcatLogging();`
+* Initialize Bugfender in your `Application#onCreate()` with:
+
+```java
+Bugfender.init(this, "<YOUR APP KEY>", BuildConfig.DEBUG);
+Bugfender.enableLogcatLogging();
+Bugfender.enableUIEventLogging(this);
+```
+
 * If you detect an issue you can send it with `Bugfender.sendIssue("Title", "Message");`
 * If you want to associate a value (String, Integer, Boolean or Float) to a device you can send it with (learn more about [Device associated data] (https://bugfender.com/blog/associated-device-information)):
   - `Bugfender.setDeviceString("user.email", "john@john.com");`
@@ -15,16 +24,11 @@
 * Also you can remove a specific value associated with the device, you can remove it with: `Bugfender.removeDeviceKey("user.children");`
 * Bugfender automatically generates an identifier for the application install in a device. You can retrieve it to show in your UI or send to your server: `Bugfender.getDeviceIdentifier();`
 
+This repository contains a sample application using Bugfender.
+
 ## More information
-For more information on all methods available please you can check the [Bugfender Android reference documentation](http://bugfender.github.io/BugfenderSDK-android-docs).
+### Docs
+For more information on all methods available please you can check the [Bugfender Android reference documentation](http://www.javadoc.io/doc/com.bugfender.sdk/android).
 
-## SDK status
-The SDK is still under development but the existent functionality has been thoroughly tested and **it is suitable for production**. There are no known issues with the SDK at the moment.
-
-The following functionalities are missing (compared to the iOS SDK):
-
-* Automated UI Event logging (some done, some missing)
-* Automated reporting on new SDK versions
-
-### Contributions
-We are releasing this early version because we want to get all possible feedback. Please feel free to open an issue or contact us at https://bugfender.com/contact .
+### SDK status
+The SDK is suitable for production. Please feel free to open an issue or contact us at [bugfender.com/contact](https://bugfender.com/contact) .
