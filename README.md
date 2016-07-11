@@ -15,6 +15,7 @@ Bugfender.enableLogcatLogging();
 Bugfender.enableUIEventLogging(this);
 ```
 
+* If using Proguard, add the lines `proguard-rules.txt` to your configuration.
 * If you detect an issue you can send it with `Bugfender.sendIssue("Title", "Message");`
 * If you want to associate a value (String, Integer, Boolean or Float) to a device you can send it with (learn more about [Device associated data] (https://bugfender.com/blog/associated-device-information)):
   - `Bugfender.setDeviceString("user.email", "john@john.com");`
