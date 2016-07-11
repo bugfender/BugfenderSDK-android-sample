@@ -1,0 +1,40 @@
+#####################################################################
+############### Retrofit, Okio, OkHttp library ######################
+#####################################################################
+
+-keep class com.squareup.okhttp.** { *; }
+-keep class retrofit.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+
+-dontwarn com.squareup.okhttp.**
+-dontwarn okio.**
+-dontwarn retrofit.**
+-dontwarn rx.**
+
+-keepclasseswithmembers class * {
+    @retrofit.http.* <methods>;
+}
+
+# If in your rest service interface you use methods with Callback argument.
+-keepattributes Exceptions
+
+# If your rest service methods throw custom exceptions, because you've defined an ErrorHandler.
+-keepattributes Signature
+
+
+#####################################################################
+########################## Gson library ############################
+####################################################################
+
+# Gson uses generic type information stored in a class file when working with fields. Proguard
+# removes such information by default, so configure it to keep all of it.
+-keepattributes Signature
+
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+
+-keepattributes EnclosingMethod
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.stream.** { *; }
