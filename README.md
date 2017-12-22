@@ -6,7 +6,7 @@
 Here are the main points to getting Bugfender working on your apps:
 
 * Get an app key at [bugfender.com](https://bugfender.com/)
-* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:0.+'`
+* Add Bugfender SDK dependency to your module `<module>/build.gradle`: `compile 'com.bugfender.sdk:android:1.+'`
 * Initialize Bugfender in your `Application#onCreate()` with:
 
 ```java
