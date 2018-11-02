@@ -74,7 +74,7 @@ FeedbackStyle feedbackStyle = new FeedbackStyle ()
 ```
 ![](Docs/feedback-custom-style.png)
 
-## Using a custom UI
+### Using a custom UI
 
 If you need further customization you can implement your own UI. All you have to do is collect your user feedback as you wish and send it to Bugfender using `Bugfender.sendUserFeedback`:
 
