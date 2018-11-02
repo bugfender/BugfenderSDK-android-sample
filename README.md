@@ -27,6 +27,61 @@ Bugfender.enableUIEventLogging(this);
 
 This repository contains a sample application using Bugfender.
 
+## Collecting User feedback
+
+Getting feedback from the final users is one of the most important things for an app developer. Good user feedback allows you detect errors in your app and helps you to understand better your product.
+
+Starting from version 1.1, Bugfender provides a new feature to easily collect app feedback from final users. It takes only two minutes and a few lines of code to integrate. You can think about the User Feedback as an special kind of Issue, every time your users submit their feedback you will get a new issue in Bugfender.
+
+![](Docs/feedback-default-style.png)
+
+The easiest way to implement Bugfender User Feedback is using the customizable User Feedback Activity. It provides a convenient screen with two text fields, one short for the subject and another bigger for the feedback.
+
+### Using default UI
+
+Using the convenient UI provided by Bugfender requires calling the following method that will return the Intent that must be used to start the Activity:
+```java
+// Obtaining the Intent
+Intent userFeedbackIntent = Bugfender.getUserFeedbackActivityIntent (
+                                                        context,
+                                                        "App bar title",
+                                                        "Give some instructions to your users",
+                                                        "Placeholder for subject textfield" ,
+                                                        "Placeholder for message textfield",
+                                                        "Send")
+
+
+// Starting the Activity
+startActivityForResult (userFeedbackIntent, FeedbackActivity.REQUEST_CODE);
+```
+You can obtain information about the user action using the onActivityResult method:
+```java
+@Override
+protected void onActivityResult (final int requestCode, final int resultCode, final Intent data) {
+  if (requestCode == FeedbackActivity.REQUEST_CODE) {
+    Toast.makeText (this, resultCode == Activity.RESULT_OK ? "Feedback sent" : "Feedback cancelled", Toast.LENGTH_SHORT).show ();
+  } else {
+    super.onActivityResult (requestCode, resultCode, data);
+  }
+}
+```
+Additionally, if you require more customization you can configure the colors of the screen calling a version of `Bugfender.getUserFeedbackActivityIntent` method that accepts a `FeedbackStyle` object as an additional argument. With this object you can configure three areas of the screen separately (app bar, input and rest of the screen), the areas that are not set will use the colors provided by our default implementation.
+```java
+FeedbackStyle feedbackStyle = new FeedbackStyle ()
+    .setAppBarColors (R.color.backgroundColor, R.color.titleColor, R.color.closeButtonColor, R.color.actionButtonColor)
+    .setInputColors (R.color.backgroundColor, R.color.textColor, R.color.hintColor)
+    .setScreenColors (R.color.backgroundColor, R.color.textColor)
+```
+![](Docs/feedback-custom-style.png)
+
+## Using a custom UI
+
+If you need further customization you can implement your own UI. All you have to do is collect your user feedback as you wish and send it to Bugfender using `Bugfender.sendUserFeedback`:
+
+```java
+Bugfender.sendUserFeedback ("Title of the feedback", "Message of the feedback")
+```
+
 ## More information
 ### Docs
 For more information on all methods available, please go to the [Bugfender Android reference documentation](http://www.javadoc.io/doc/com.bugfender.sdk/android).
