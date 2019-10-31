@@ -52,14 +52,17 @@ Intent userFeedbackIntent = Bugfender.getUserFeedbackActivityIntent (
 
 
 // Starting the Activity
-startActivityForResult (userFeedbackIntent, FeedbackActivity.REQUEST_CODE);
+startActivityForResult (userFeedbackIntent, YOUR_REQUEST_CODE);
 ```
-You can obtain information about the user action using the onActivityResult method:
+You can obtain information about the user action (if feedback was sent and the URL on Bugfender dashboard) using the onActivityResult method:
 ```java
 @Override
 protected void onActivityResult (final int requestCode, final int resultCode, final Intent data) {
-  if (requestCode == FeedbackActivity.REQUEST_CODE) {
+  if (requestCode == YOUR_REQUEST_CODE) {
     Toast.makeText (this, resultCode == Activity.RESULT_OK ? "Feedback sent" : "Feedback cancelled", Toast.LENGTH_SHORT).show ();
+    if (resultCode == Activity.RESULT_OK) {
+	    String url = data.getStringExtra ("result.feedback.url");
+    }
   } else {
     super.onActivityResult (requestCode, resultCode, data);
   }
