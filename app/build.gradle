@@ -20,5 +20,5 @@ android {
 
 dependencies {
   implementation 'com.android.support:appcompat-v7:27.1.1'
-  implementation 'com.bugfender.sdk:android:1.0.7'
+  implementation 'com.bugfender.sdk:android:2.+'
 }
