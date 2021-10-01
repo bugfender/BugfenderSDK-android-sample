@@ -19,3 +19,7 @@ allprojects {
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
+
+task test() {
+    println "Hello configuration phase task! $task.name"
+}
