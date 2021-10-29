@@ -27,6 +27,21 @@ Bugfender.enableUIEventLogging(this);
 
 This repository contains a sample application using Bugfender.
 
+## Deobfuscating crash reports
+If you are obfuscating your code you can use [our gradle plugin](https://plugins.gradle.org/plugin/com.bugfender.upload-mapping) to upload automatically 
+your mapping files to [Bugfender](https://bugfender.com) and have deobfuscated stack-traces.
+
+Just add the plugin to your app build.gradle file and configure it with the Symbols Upload Token, obtained from your Bugfender dashboard.
+```
+plugins {
+    id "com.bugfender.upload-mapping" version "1.0.1"
+}
+
+bugfender {
+    symbolicationToken "<your_token_here>"
+}
+```
+
 ## Collecting User feedback
 
 Getting feedback from the final users is one of the most important things for an app developer. Good user feedback allows you detect errors in your app and helps you to understand better your product.
