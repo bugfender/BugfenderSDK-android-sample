@@ -1,7 +1,7 @@
 package com.bugfender.sample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import com.bugfender.sdk.Bugfender;
 
 import java.net.URL;
