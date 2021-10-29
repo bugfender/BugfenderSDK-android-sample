@@ -1,4 +1,12 @@
+plugins {
+  id "com.bugfender.upload-mapping" version "1.0.1"
+}
+
 apply plugin: 'com.android.application'
+
+bugfender {
+  symbolicationToken "<your_token_here>"
+}
 
 android {
   compileSdkVersion 31
