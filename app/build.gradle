@@ -1,5 +1,5 @@
 plugins {
-  id "com.bugfender.upload-mapping" version "1.0.1"
+  id "com.bugfender.upload-mapping" version "1.0.2"
 }
 
 apply plugin: 'com.android.application'
