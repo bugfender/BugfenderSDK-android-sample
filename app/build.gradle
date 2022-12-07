@@ -1,13 +1,21 @@
+plugins {
+  id "com.bugfender.upload-mapping" version "1.0.2"
+}
+
 apply plugin: 'com.android.application'
 
+bugfender {
+  symbolicationToken "<your_token_here>"
+}
+
 android {
-  compileSdkVersion 27
-  buildToolsVersion '27.0.3'
+  compileSdkVersion 31
+  buildToolsVersion '30.0.3'
 
   defaultConfig {
     applicationId "com.bugfender.sample"
     minSdkVersion 16
-    targetSdkVersion 27
+    targetSdkVersion 31
     versionCode 1
     versionName "1.0"
   }
@@ -19,6 +27,6 @@ android {
 }
 
 dependencies {
-  implementation 'com.android.support:appcompat-v7:27.1.1'
+  implementation 'androidx.appcompat:appcompat:1.3.1'
   implementation 'com.bugfender.sdk:android:3.+'
 }
