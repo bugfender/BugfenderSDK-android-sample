@@ -34,7 +34,7 @@ your mapping files to [Bugfender](https://bugfender.com) and have deobfuscated s
 Just add the plugin to your app build.gradle file and configure it with the Symbols Upload Token, obtained from your Bugfender dashboard.
 ```
 plugins {
-    id "com.bugfender.upload-mapping" version "1.0.2"
+    id "com.bugfender.upload-mapping" version "1.1.1"
 }
 
 bugfender {
